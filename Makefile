@@ -1,10 +1,10 @@
 TARGET := boot.bin
-SOURCE := boot.asm
+SOURCE := src/boot.asm
 
 all: ${TARGET}
 
-${TARGET}: boot.asm
-	nasm -f bin -o boot.bin boot.asm
+${TARGET}: ${SOURCE}
+	nasm -f bin -o ${TARGET} ${SOURCE}
 
 clean:
-	rm boot.bin
+	rm ${TARGET}
